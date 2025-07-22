@@ -1,0 +1,15 @@
+# Gitで管理しないもの
+/vendor
+/node_modules
+/storage/*.key
+/storage/*.log
+/storage/framework/sessions/*
+/docker/mysql/data/
+laravel-docker-template/
+
+
+# Gitで含めるべきもの（例）
+!.env.example
+!docker-compose.yml
+!Dockerfile
+
