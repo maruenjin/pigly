@@ -1,0 +1,68 @@
+/* 背景グラデーション */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* 白いカード */
+.container {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 400px;
+    text-align: center;
+}
+
+/* 見出し */
+h1 {
+    color: #e91e63;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* 入力フォーム */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* ボタン */
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, #f48fb1, #ce93d8);
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* リンク */
+a {
+    color: #2196f3;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
