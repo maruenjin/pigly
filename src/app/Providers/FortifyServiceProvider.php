@@ -52,8 +52,6 @@ class FortifyServiceProvider extends ServiceProvider
         return view('auth.login');
         });
 
-        Fortify::afterRegister(function ($user) {
-        return Redirect::to('/register/step2');
-        });
+    
     }
 }
