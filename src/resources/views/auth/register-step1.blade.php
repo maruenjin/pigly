@@ -30,5 +30,6 @@
     <button type="submit">次に進む</button>
 </form>
 
-<p><a href="/login">ログインはこちら</a></p>
+<p><a href="{{ route('login') }}">ログインはこちら</a>
+</p>
 @endsection
