@@ -5,6 +5,8 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\RegisterStep2Controller;
 use App\Http\Controllers\WeightLogController;
 use App\Http\Controllers\WeightTargetController;
+use App\Http\Controllers\Auth\LoginController;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,5 +44,33 @@ Route::get('/weight_target/edit', [WeightTargetController::class, 'edit'])
 Route::post('/weight_target/update', [WeightTargetController::class, 'update'])
     ->name('weight_target.update')
     ->middleware('auth');
+
+Route::post('/logout', function () {
+    Auth::logout();
+    return redirect('/login');
+});
+
+Route::get('/weights', [WeightLogController::class, 'index'])
+    ->name('weight.index')
+    ->middleware('auth');
+
+Route::get('/weight_logs/search', [App\Http\Controllers\WeightLogController::class, 'search'])
+    ->name('weight_logs.search')
+    ->middleware('auth');
+
+Route::post('/weight_logs', [App\Http\Controllers\WeightLogController::class, 'store'])
+    ->name('weight_logs.store')
+    ->middleware('auth');
+
+Route::post('/weight_logs/{id}/delete', [WeightLogController::class, 'destroy'])
+    ->name('weight_logs.delete')
+    ->middleware('auth');
+
+
+
+
+
+
+
 
 

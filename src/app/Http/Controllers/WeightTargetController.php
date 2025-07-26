@@ -2,31 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\UpdateWeightTargetRequest;
 use App\Models\WeightTarget;
 
 class WeightTargetController extends Controller
 {
     public function edit()
     {
-        $target = Auth::user()->weightTarget;
-        return view('weights.edit_target', compact('target'));
+        $weightTarget = auth()->user()->weightTarget;
+        return view('weights.edit_target', compact('weightTarget'));
     }
 
-    public function update(Request $request)
+    public function update(UpdateWeightTargetRequest $request)
     {
-        $request->validate([
-            'target_weight' => 'required|numeric|min:1|max:999.9',
-        ]);
+        $user = auth()->user();
 
-        $user = Auth::user();
+        // 既存 or 新規
+        $target = $user->weightTarget ?? new WeightTarget();
+        $target->user_id = $user->id; // 新規時のみ設定される
+        $target->target_weight = $request->target_weight;
+        $target->save();
 
-        $user->weightTarget()->updateOrCreate(
-            ['user_id' => $user->id],
-            ['target_weight' => $request->target_weight]
-        );
-
-        return redirect()->route('weight_logs.index')->with('success', '目標体重を更新しました');
+        return redirect()->route('weight_logs.index')->with('status', '目標体重を更新しました');
     }
 }
+
+

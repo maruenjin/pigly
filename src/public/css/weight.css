@@ -301,3 +301,269 @@ h1 {
     color: #fff;
     border-radius: 6px;
 }
+
+/* 目標体重設定画面 */
+.edit-target-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px);
+    
+    background-color: #f9f9f9;
+}
+
+.edit-target-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+}
+
+.edit-target-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #e91e63;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.unit {
+    margin-left: 8px;
+    font-size: 16px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #f48fb1, #ce93d8);
+    color: #fff;
+    border: none;
+}
+
+.badge-required {
+    display: inline-block;
+    background: #f44336;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+}
+
+/* 日付入力カスタム */
+.custom-date-input {
+    position: relative;
+    color: #333;
+}
+
+/* プレースホルダー風の疑似要素 */
+.custom-date-input:invalid::before {
+    content: '年/月/日';
+    color: #aaa;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+input[type="date"] {
+    padding-right: 10px;
+    /* テキストがアイコンにぶつからないように */
+}
+
+.input-group-text {
+    background: #f5f5f5;
+    font-weight: bold;
+    border: 1px solid #ccc;
+}
+
+/* Chrome / Safari の time input アイコン非表示 */
+input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+/* Firefox の time input アイコン非表示 */
+input[type="time"]::-moz-focus-inner {
+    border: 0;
+}
+
+/* Edge の time input アイコン非表示 */
+input[type="time"]::-ms-clear {
+    display: none;
+}
+
+.custom-date-input {
+    position: relative;
+    padding-right: 35px;
+    /* 右側に余白を作る */
+}
+
+.custom-date-input::after {
+    content: '▼';
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #888;
+    pointer-events: none;
+    /* クリックを邪魔しない */
+}
+
+/* placeholderの色を薄く */
+::placeholder {
+    color: #ddd;
+    /* かなり薄めのグレー */
+    opacity: 1;
+    /* ブラウザによって薄くなりすぎるので固定 */
+}
+
+/* number入力の矢印を非表示（Chrome、Safariなど） */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox対応 */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* 編集カード */
+.edit-card {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.edit-title {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* 更新ボタン */
+.btn-gradient {
+    background: linear-gradient(to right, #f48fb1, #ce93d8);
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn-gradient:hover {
+    opacity: 0.9;
+}
+
+/* ゴミ箱ボタン */
+.btn-trash {
+    background: none;
+    border: none;
+    color: #e91e63;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.btn-trash:hover {
+    color: #ad1457;
+}
+
+.edit-target-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.edit-target-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.input-field {
+    padding: 12px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 180px;
+    text-align: left;
+    
+}
+
+.unit {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+
+.edit-target-card {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 320px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.btn-gray {
+    background: #ccc;
+    color: #333;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #f48fb1, #ce93d8);
+    color: #fff;
+    border: none;
+}
