@@ -13,4 +13,9 @@ class WeightTarget extends Model
         'user_id',
         'target_weight',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

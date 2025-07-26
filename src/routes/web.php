@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\RegisterStep2Controller;
-
+use App\Http\Controllers\WeightLogController;
+use App\Http\Controllers\WeightTargetController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +26,21 @@ Route::post('/register/step2', [RegisterStep2Controller::class, 'store'])->name(
 Route::get('/weight/create', function () {
     return view('weights.create');
 });
-Route::get('/weight_logs', function () {
-    return '体重管理ページ（ここに一覧を作成予定）';
-})->middleware('auth');
+Route::get('/weight_logs', [WeightLogController::class, 'index'])
+    ->name('weight_logs.index')
+    ->middleware('auth');
+Route::get('/weight_logs/{id}/edit', [WeightLogController::class, 'edit'])
+    ->name('weight_logs.edit')
+    ->middleware('auth');
+Route::post('/weight_logs/{id}/update', [WeightLogController::class, 'update'])
+    ->name('weight_logs.update')
+    ->middleware('auth');
+Route::get('/weight_target/edit', [WeightTargetController::class, 'edit'])
+    ->name('weight_target.edit')
+    ->middleware('auth');
+
+Route::post('/weight_target/update', [WeightTargetController::class, 'update'])
+    ->name('weight_target.update')
+    ->middleware('auth');
+
+
